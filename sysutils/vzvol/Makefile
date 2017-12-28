@@ -17,7 +17,7 @@ GROUPS=         			operator
 
 USE_GITHUB=					yes
 GH_ACCOUNT=					RainbowHackerHorse
-GH_TAGNAME=					v0.4.1
+GH_TAGNAME=					v0.5.4
 
 IS_INTERACTIVE=				yes
 NO_ARCH=					yes
