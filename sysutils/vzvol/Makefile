@@ -45,7 +45,7 @@ pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/linux
 
 do-install:
-	(cd ${WRKSRC}/bin/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/bin/)
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vzvol ${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vzvol/lib/)
 
 .include <bsd.port.mk>
