@@ -1,9 +1,9 @@
 # $FreeBSD$
 
 PORTNAME=					vzvol
+DISTVERSIONPREFIX=			v
 DISTVERSION=				0.5.4
 CATEGORIES=					sysutils
-DISTVERSIONPREFIX=			v
 
 MAINTAINER=					rainbow@purlinux.org
 COMMENT=					Feature rich zvol manager
