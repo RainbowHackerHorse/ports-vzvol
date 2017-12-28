@@ -11,8 +11,6 @@ COMMENT=					vzvol is a tool to assist in the creation of ZFS zvols as storage f
 LICENSE=					BSD2CLAUSE
 LICENSE_FILE=				${WRKSRC}/LICENSE
 
-RUN_DEPENDS=
-
 GROUPS=         			operator
 
 USE_GITHUB=					yes
@@ -32,7 +30,7 @@ OPTIONS_DEFAULT=			EXT XFS PROGRESS VIRTUALBOX
 EXT_RUN_DEPENDS=			e2fsprogs:sysutils/e2fsprogs
 XFS_RUN_DEPENDS=			xfsprogs:sysutils/xfsprogs
 PROGRESS_RUN_DEPENDS= 		pv:sysutils/pv
-VIRTUALBOX=					virtualbox-ose:emulators/virtualbox-ose
+VIRTUALBOX_RUN_DEPENDS=		virtualbox-ose:emulators/virtualbox-ose
 PROGRESS_DESC=				Enables progress bars for import
 EXT_DESC=					Install support for ext2, ext3, and ext4
 XFS_DESC=					Install support for XFS Filesystem
@@ -41,6 +39,15 @@ VIRTUALBOX_DESC=			Support .VMDK creation with VirtualBox tools
 DOCSFILES=					README LICENSE
 PORTDOCS=					${DOCSFILES}
 
-.include <bsd.port.pre.mk>
+pre-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/shared
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/freebsd
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/linux
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vzvol ${STAGEDIR}${PREFIX}/bin
+	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vzvol/lib/)
 
 .include <bsd.port.mk>
