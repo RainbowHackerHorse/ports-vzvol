@@ -21,7 +21,7 @@ NO_ARCH=					yes
 
 WRKSRC=						${WRKDIR}/vzvol-${DISTVERSION}
 
-OPTIONS_DEFINE+=			DOCS PROGRESS VIRTUALBOX
+OPTIONS_DEFINE+=			PROGRESS VIRTUALBOX
 OPTIONS_GROUP=				FILESYSTEMS
 OPTIONS_GROUP_FILESYSTEMS=	EXT XFS
 OPTIONS_DEFAULT=			EXT XFS PROGRESS VIRTUALBOX
@@ -33,9 +33,6 @@ PROGRESS_DESC=				Enables progress bars for import
 EXT_DESC=					Install support for ext2, ext3, and ext4
 XFS_DESC=					Install support for XFS Filesystem
 VIRTUALBOX_DESC=			Support .VMDK creation with VirtualBox tools
-
-DOCSFILES=					README LICENSE
-PORTDOCS=					${DOCSFILES}
 
 NO_BUILD=					YES
 
