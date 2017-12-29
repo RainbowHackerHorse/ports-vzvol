@@ -37,6 +37,8 @@ VIRTUALBOX_DESC=			Support .VMDK creation with VirtualBox tools
 DOCSFILES=					README LICENSE
 PORTDOCS=					${DOCSFILES}
 
+NO_BUILD=					YES
+
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/bin
