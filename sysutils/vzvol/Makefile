@@ -39,6 +39,7 @@ PORTDOCS=					${DOCSFILES}
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol
+	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/bin
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/shared
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/freebsd
