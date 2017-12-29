@@ -38,15 +38,12 @@ DOCSFILES=					README LICENSE
 PORTDOCS=					${DOCSFILES}
 
 pre-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/shared
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/freebsd
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/vzvol/lib/linux
+	mkdir ${STAGEDIR}${PREFIX}/lib/vzvol
+	mkdir ${STAGEDIR}${PREFIX}/lib/vzvol/lib
 
 do-install:
 	(cp ${WRKSRC}/bin/vzvol ${STAGEDIR}${PREFIX}/bin)
 	(chmod +x ${STAGEDIR}${PREFIX}/bin/vzvol)
-	(cd ${WRKSRC}/lib/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/vzvol/lib/)
+	(cp -R ./ ${WRKSRC}/lib/ ${STAGEDIR}${PREFIX}/lib/vzvol/lib/)
 
 .include <bsd.port.mk>
