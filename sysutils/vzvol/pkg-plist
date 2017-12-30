@@ -16,6 +16,7 @@ lib/vzvol/lib/shared/vzvol_list.sh
 lib/vzvol/lib/shared/vzvol_vmdk.sh
 lib/vzvol/lib/shared/zvol_check.sh
 lib/vzvol/lib/shared/vzvol_errorcode.sh
+lib/vzvol/lib/shared/vzvol_existondisk.sh
 lib/vzvol/lib/linux/sudo.sh
 lib/vzvol/lib/linux/vzvol_pkgcheck.sh
 lib/vzvol/lib/linux/vzvol_fs_fat32.sh
