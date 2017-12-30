@@ -2,7 +2,7 @@
 
 PORTNAME=					vzvol
 DISTVERSIONPREFIX=			v
-DISTVERSION=				0.5.4
+DISTVERSION=				0.5.5
 CATEGORIES=					sysutils
 
 MAINTAINER=					rainbow@purlinux.org
@@ -15,7 +15,7 @@ GROUPS=						operator
 
 USE_GITHUB=					yes
 GH_ACCOUNT=					RainbowHackerHorse
-GH_TAGNAME=					v0.5.4
+GH_TAGNAME=					v0.5.5
 
 NO_ARCH=					yes
 
